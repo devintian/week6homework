@@ -17,7 +17,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="rol-3">
+            <div class="col-4">
                 <h1>Search for a city</h1>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Recipient's username"
@@ -34,13 +34,25 @@
                             <li class="list-group-item">Vestibulum at eros</li> -->
                 </ul>
             </div>
-            <div class="rol-8">
+            <div class="col-7">
                 <div class="row">
-                    <div id="city-name">
-
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">City Name  <span id="currentDay" class="lead"></span></h2>                          
+                            <p class="card-text">Temperature: </p>
+                            <p class="card-text">Humidity: </p>
+                            <p class="card-text">Wind Speed: </p>
+                            <p class="card-text">UV Index: </p>
+                        </div>
                     </div>
-                    <p id="currentDay" class="lead"></p>
-
+                    
+                </div>
+                <div class="row">
+                    <div id="forecast">
+                        <div>
+                            5-Day Forecast :
+                        </div>                  
+                    </div>
 
                 </div>
             </div>
@@ -50,11 +62,11 @@
 
 
 
-    Temperature response.main.temp - 273.15
+    <!-- Temperature response.main.temp - 273.15
     Humidity response.main.humidity
     wind speed response.wind.speed
     UV Index
-    city response.name
+    city response.name -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="javascript.js"></script>
