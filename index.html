@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Week6homework-Weather</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <div class="head">
         Weather Dashboard
     </div>
-    <div class="row">
-        <div class="rol-3">
-            <h1>Search for a city</h1>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"><i class="material-icons">search</i></span>
+    <div class="container">
+        <div class="row">
+            <div class="rol-3">
+                <h1>Search for a city</h1>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recipient's username"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"><i class="material-icons">search</i></span>
+                    </div>
                 </div>
+                <ul class="list-group" id="city-list">
+                    <!-- <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li> -->
+                </ul>
             </div>
-            <ul class="list-group" id="city-list">
-                <!-- <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li> -->
-            </ul>
-        </div>
-        <div class="rol-8">
-            <div class="row">
-                <div id="city-name">
+            <div class="rol-8">
+                <div class="row">
+                    <div id="city-name">
+
+                    </div>
+                    <p id="currentDay" class="lead"></p>
+
 
                 </div>
-                
-
             </div>
+
         </div>
-        
     </div>
-    
-    
+
+
+
     Temperature response.main.temp - 273.15
-    Humidity    response.main.humidity
-    wind speed  response.wind.speed
-    UV Index    
-    city   response.name
-    
+    Humidity response.main.humidity
+    wind speed response.wind.speed
+    UV Index
+    city response.name
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="javascript.js"></script>
 </body>
+
 </html>
