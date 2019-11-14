@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="script.css"/>
 </head>
 
 <body>
-    <div class="head">
-        Weather Dashboard
+    <div class="jumbotron">
+        <h1 class="display-8 text-center dash">Weather Dashboard</h1>
     </div>
     <div class="container">
         <div class="row">
@@ -35,20 +36,18 @@
                 </ul>
             </div>
             <div class="col-7">
-                <!-- <div class="row"> -->
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">City Name  <span id="currentDay" class="lead"></span></h2>                          
-                            <p class="card-text">Temperature: </p>
-                            <p class="card-text">Humidity: </p>
-                            <p class="card-text">Wind Speed: </p>
-                            <p class="card-text">UV Index: </p>
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">City Name  <span id="currentDay" class="lead"></span></h2>                          
+                        <p class="card-text">Temperature: </p>
+                        <p class="card-text">Humidity: </p>
+                        <p class="card-text">Wind Speed: </p>
+                        <p class="card-text">UV Index: </p>
                     </div>
+                </div>
                     
-                <!-- </div> -->
                 <div class="row">
-                    <div id="forecast">
+                    <div class="col" id="forecast">
                         <div>
                             5-Day Forecast :
                         </div>                  
