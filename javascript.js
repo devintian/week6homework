@@ -12,6 +12,8 @@ $("#basic-addon2").on("click", function(){
     }).then(function(response){
         console.log(response);
         cityArr.push(inputVal);
+        $("#city-list").empty();
+
         displaycity();
         var Ftep = response.main.temp - 273.15;
         Ftep = Ftep.toFixed(2);
