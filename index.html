@@ -16,9 +16,9 @@
     <div class="jumbotron">
         <h1 class="display-8 text-center dash">Weather Dashboard</h1>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <h1>Search for a city</h1>
                 <div class="input-group mb-3">
                     <input id="city-input" type="text" class="form-control" placeholder="Enter a City"
@@ -35,10 +35,16 @@
                             <li class="list-group-item">Vestibulum at eros</li> -->
                 </ul>
             </div>
-            <div class="col-7">
+            <div class="col-2"></div>
+            <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title">City Name  <span id="currentDay" class="lead"></span></h2>                          
+                        <div class="card-title">
+                            <h2 id="city-name"></h2>
+                            <span id="currentDay" class="lead"></span>
+                            <img id="icon"> 
+                        </div>
+                                                
                         <p class="card-text">Temperature: <sapn id="tep"></sapn> </p>
                         <p class="card-text">Humidity: <span id="hum"></span></p>
                         <p class="card-text">Wind Speed: <span id="wp"></span></p>
@@ -47,11 +53,11 @@
                 </div>
                     
                 <div class="row">
-                    <div class="col" id="forecast">
-                        <div>
-                            5-Day Forecast :
-                        </div>                  
+                    <div class="col">
+                        <div>5-Day Forecast :</div>
+                        <div class="row" id="forecast"></div>                
                     </div>
+
 
                 </div>
             </div>

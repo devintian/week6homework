@@ -12,3 +12,20 @@
     background-color:red;
     
 }
+
+/* #icon{
+    height: 50px;
+    width: 50px;
+} */
+
+.container{
+    margin-right:0px;
+    margin-left: 0px;
+    
+}
+.fivecard{
+    margin-right: 10px;
+}
+#forecast{
+    margin-left: 5px;
+}
