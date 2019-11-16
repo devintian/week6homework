@@ -8,6 +8,11 @@
     margin: 0px;
 }
 
+button{
+    width: 48px;
+    height: 38px;
+}
+
 #uv{
     background-color:red;
     

@@ -2,7 +2,7 @@ $("#currentDay").text(moment().format("Do MM YY"));
 var cityArr = [];
 
 
-$("#basic-addon2").on("click", function(){
+$("#search").on("click", function(){
     var inputVal = $("#city-input").val().trim();
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=2dd71429926bf13ebe24bc0797e94190";
 
