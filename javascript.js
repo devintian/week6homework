@@ -4,7 +4,7 @@ var cityArr = [];
 
 $("#search").on("click", function(){
     var inputVal = $("#city-input").val().trim();
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=2dd71429926bf13ebe24bc0797e94190";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=2dd71429926bf13ebe24bc0797e94190";
 
     $.ajax({
         url: queryURL,
@@ -15,7 +15,7 @@ $("#search").on("click", function(){
         $("#city-list").empty();
 
         displaycity();  
-        var iconURL = "http://openweathermap.org/img/wn/"+ response.weather[0].icon + ".png";
+        var iconURL = "https://openweathermap.org/img/wn/"+ response.weather[0].icon + ".png";
         $("#icon").attr("src", iconURL);
 
         var Ftep = response.main.temp - 273.15;
@@ -27,7 +27,7 @@ $("#search").on("click", function(){
         var lat = response.coord.lat;
         var lon = response.coord.lon;
         
-        var URL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat +"&lon=" + lon + "&appid=2dd71429926bf13ebe24bc0797e94190";
+        var URL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat +"&lon=" + lon + "&appid=2dd71429926bf13ebe24bc0797e94190";
         
         
         $.ajax({
@@ -37,7 +37,7 @@ $("#search").on("click", function(){
             // console.log(responseuv);
             $("#uv").text(responseuv.value);
         })
-        var forecastQueryURL = "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=2dd71429926bf13ebe24bc0797e94190";
+        var forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=2dd71429926bf13ebe24bc0797e94190";
         $.ajax({
             url: forecastQueryURL,
             method: "GET"
@@ -53,7 +53,7 @@ function forecast(response){
     var fiveforecast= [response.list[8], response.list[16], response.list[24], response.list[32], response.list[39]];
     fiveforecast.forEach(function(m,i){
         var weatherCard = $("<div>").attr({
-            "class": "card fivecard text-center col-2",
+            "class": "card fivecard text-center col-md-11 col-sm-11 col-lg-2",
             "id": "forecast"+i
         });
         var cardBody = $("<div>").addClass("card-body");
@@ -61,7 +61,7 @@ function forecast(response){
         var cardText = $("<p>").addClass("card-text");
         var temp = $("<div>").text("Temperature: " + (m.main.temp-273.15).toFixed(2) + "℃");
         var hum = $("<div>").text("humidity: " + m.main.humidity + "%");
-        var iconURL = "http://openweathermap.org/img/wn/"+ m.weather[0].icon + ".png";
+        var iconURL = "https://openweathermap.org/img/wn/"+ m.weather[0].icon + ".png";
         var icon = $("<img>").attr("src", iconURL);
         cardText.append(icon, temp, hum);
         cardBody.append(cardTitle,cardText);
