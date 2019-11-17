@@ -1,20 +1,25 @@
 $("#currentDay").text(moment().format("Do MM YY"));
 var cityArr = [];
+var inputVal;
 
+$("#search").on("click", function(){   
+    inputVal = $("#city-input").val().trim();
+    displaycity();
+    displayResult(inputVal);
+});
 
-$("#search").on("click", function(){
-    var inputVal = $("#city-input").val().trim();
+$(".list-group").on("click",".list-group-item",function(){ 
+    displayResult($(this).text());
+})
+
+function displayResult(inputVal){    
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=2dd71429926bf13ebe24bc0797e94190";
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        // console.log(response);
-        cityArr.push(inputVal);
-        $("#city-list").empty();
-
-        displaycity();  
+        // console.log(response);      
         var iconURL = "https://openweathermap.org/img/wn/"+ response.weather[0].icon + ".png";
         $("#icon").attr("src", iconURL);
 
@@ -28,8 +33,7 @@ $("#search").on("click", function(){
         var lon = response.coord.lon;
         
         var URL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat +"&lon=" + lon + "&appid=2dd71429926bf13ebe24bc0797e94190";
-        
-        
+               
         $.ajax({
             url: URL,
             method: "GET"
@@ -45,8 +49,8 @@ $("#search").on("click", function(){
             console.log(response);
             forecast(response);
         })       
-    })   
-});
+    }) 
+}
 
 function forecast(response){
     $("#forecast").empty();
@@ -67,11 +71,12 @@ function forecast(response){
         cardBody.append(cardTitle,cardText);
         weatherCard.append(cardBody);
         $("#forecast").append(weatherCard);
-    });
-    
+    });   
 }
 
 function displaycity(){
+    $("#city-list").empty();
+    cityArr.push(inputVal);
     var n = cityArr.length
     for(var i=0; i<n;i++){
         var row = $("<li>");
@@ -80,5 +85,3 @@ function displaycity(){
         $("#city-list").append(row);
     }
 }
-
-
